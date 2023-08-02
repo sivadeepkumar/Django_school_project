@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block start %}
-<h1 class = 'header'> HOME </h1>
+<title>Add addmissions Page</title>
+<br/>
+<h1 class = 'text-center header'> HOME </h1>
+<hr/>
+<div class="main-container">
+
+    <div>
+        <h1 class=" text-center sub-header">Finance</h1>
+        <div class="sub-container">
+            <div>
+            <a href="finance/" class="btn btn-primary">Finance</a><br/>
+        </div>
+        <div>
+            <a href="all_finance/" class="btn btn-primary mt-3">All Finance</a>
+        </div>
+        <br/>  
+        <div>
+        <a href="financeReports/" class="btn btn-primary mt-3">financeReports</a>
+        </div>
+        </div>  
+    </div>
+
+<div>
+
+    <h1 class="text-center sub-header">Admissions</h1>
+    <div class="sub-container">
+        <div>
+            <a href="addAdmission/" class="btn btn-primary">Add admissions</a><br/>
+        </div>
+        <div>
+            <a href="admissionsReport/" class="btn btn-primary mt-3">Admissions Report</a>
+        </div>
+    </div>
+    
+</div>
 {% endblock %}
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block start %}
+<h1>Table</h1>
+<table >
+    <tr>
+        <th>Student Name</th>
+        <th>Fathername</th>
+        <th>Contact No</th>
+        <th>Actions</th>
+    </tr>
+{% for i in allstudents %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.fathername}}</td>
+        <td>{{i.contact}}</td>
+        <td><a href="/delete/{{i.id}}">Delete</a> &nbsp &nbsp &nbsp <a href="/update/{{i.id}}">Update</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+<h1>start_admissions</h1>
+{% endblock %}
+

@@ -24,8 +24,12 @@ from finance.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home, name='home'),
-    path('admissions/',admissions, name='admissions'),
-    path('start_admissions/',start_admissions, name='start_admissions'),
+    path('addAdmission/',addAdmission, name='addAdmission'),
+    path('admissionsReport/',admissionsReport, name='admissionsReport'),
     path('finance/',finance, name='finance'),
-    path('all_finance/',admissions, name='all_finance'),
+    path('all_finance/',all_finance, name='all_finance'),
+    path('financeReports/',financeReports,name='financeReports'),
+    path('vendor-details/',Vender,name='Vender'),
+    path('delete/<int:id>/',deleteStudent,name='deleteStudent'),
+    path('update/<int:id>/',updateStudent,name='updateStudent'),
 ]

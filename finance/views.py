@@ -12,3 +12,6 @@ def all_finance(request):
     return render(request,'all_finance.html')
 
 
+def financeReports(request):
+    return render(request,'financeReports.html')
+

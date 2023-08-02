@@ -78,8 +78,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'schoolapp',
+        'USER': 'schoolappuser',
+        'PASSWORD':'1234',
     }
 }
 
@@ -127,3 +129,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'styles')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
