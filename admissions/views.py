@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
-from admissions.models import Student
+from admissions.models import Student,Teacher
 from admissions.forms import StudentModelForm,VenderForm
+from django.views.generic import View
+from django.http import HttpResponse
+from django.views.generic import ListView,DetailView,CreateView
 
 # Create your views here.
 
@@ -56,3 +59,24 @@ def updateStudent(request,id):
     
     # return redirect('/admissionsReport/')
     return render(request,'updateStudent.html',dict)
+
+
+class FirstClassBasedView(View):
+    def get(self,request):
+        return HttpResponse('<h1>First Class is Ready</h1>')
+    
+
+
+class Teacherlist(ListView):
+    model = Teacher
+    
+
+
+
+class GetTeacher(DetailView):
+    model = Teacher
+    
+
+class AddTeacher(CreateView):
+    model = Teacher
+    fields = ('name','subject','contact','exp')

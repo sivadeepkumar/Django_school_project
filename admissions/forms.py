@@ -15,4 +15,4 @@ class VenderForm(forms.Form):
     contact = forms.CharField(max_length=100)
     item = forms.CharField(max_length=100)
 
-    
+

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block start %}
+
+
+ <table >
+    <tr>
+        <th>Name</th>
+        <th>exp</th>
+        <th>subject</th>
+        <th>Contact</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr>
+        <td>{{teacher.name}}</td>
+        <td>{{teacher.exp}}</td>
+        <td>{{teacher.subject}}</td>
+        <td>{{teacher.contact}}</td>
+       <td><a href="/getteacher/">Back</a></td>
+    </tr>
+
+</table>
+
+{%endblock%}

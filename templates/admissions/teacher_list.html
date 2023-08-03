@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block start %}
+
+
+<table style="border: 5px double red; padding:30px;">
+    <tr>
+       <th>Name</th>
+       <td>exp</td>
+       <td>subject</td>
+       <td>contact</td>
+       <td>Actions</td>
+    </tr>
+    {% for i in teacher_list %}
+    <tr>
+        <a href='/getteacter/{{i.id}}'>
+       <th>{{i.name}}</th>
+       <td>{{i.exp}}</td>
+       <td>{{i.subject}}</td>
+       <td>{{i.contact}}</td></a>
+       <td><a href="/update/{{i.id}}"><button type="button">Update</button></a> <a href="/delete/{{i.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+ </table>
+
+
+{%  endblock %}
