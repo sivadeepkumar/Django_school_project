@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from admissions.views import *
 from finance.views import *
-
+from django.contrib.auth.decorators import login_required
+from django.conf.urls import include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('accounts/',include('django.contrib.auth.urls')),
+    
     path('',home, name='home'),
     path('addAdmission/',addAdmission, name='addAdmission'),
     path('admissionsReport/',admissionsReport, name='admissionsReport'),
@@ -34,14 +38,12 @@ urlpatterns = [
     path('update/<int:id>/',updateStudent,name='updateStudent'),
 
 
-    path('firstcbv/',FirstClassBasedView.as_view()),
-    path('getteacher/', Teacherlist.as_view(),name='getteacherlist'),
-    path('getteacher/<int:pk>', GetTeacher.as_view()),
-    path('addteacher/',AddTeacher.as_view()),
-    path('updateteacher/<int:pk>',UpdateTeacher.as_view()),
-    path('deleteteacher/<int:pk>',DeleteTeacher.as_view()),
-
-
+    path('firstcbv/',login_required(FirstClassBasedView.as_view())),
+    path('getteacher/', login_required(Teacherlist.as_view()),name='getteacherlist'),
+    path('getteacher/<int:pk>', login_required(GetTeacher.as_view())),
+    path('addteacher/',login_required(AddTeacher.as_view())),
+    path('updateteacher/<int:pk>',login_required(UpdateTeacher.as_view())),
+    path('deleteteacher/<int:pk>',login_required(DeleteTeacher.as_view())),
 
 
 ]

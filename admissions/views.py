@@ -5,12 +5,16 @@ from django.views.generic import View
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+
+@login_required
 def home(request):
     return render(request,'index.html')
 
+
+@login_required
 def addAdmission(request):
     studentForm = {'form':StudentModelForm}
     if request.method == 'POST':
@@ -21,14 +25,14 @@ def addAdmission(request):
     
     return render(request,'addAdmission.html',studentForm)
 
-
+@login_required
 def admissionsReport(request):
     result = Student.objects.all()
     students = {'allstudents':result}
     return render(request,'admissionsReport.html',students)
 
 
-
+@login_required
 def Vender(request):
     vform = {'form':VenderForm}
     if request.method == 'POST':
@@ -39,7 +43,7 @@ def Vender(request):
         
     return render(request,'venderform.html',vform)
 
-
+@login_required
 def deleteStudent(request,id):
     d = Student.objects.get(id=id)
 
@@ -47,7 +51,7 @@ def deleteStudent(request,id):
     return redirect('/admissionsReport/')
 
 
-
+@login_required
 def updateStudent(request,id):
     u = Student.objects.get(id=id)
     form = StudentModelForm(instance=u)

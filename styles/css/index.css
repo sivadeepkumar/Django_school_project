@@ -24,6 +24,17 @@
     justify-content: center;
     align-items: center;
 }
-.sub-header {
-   
+
+.login-page {
+    padding-bottom: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-table {
+    margin-bottom  : 30px;
+
 }
