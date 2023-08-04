@@ -18,4 +18,5 @@ class Teacher(models.Model):
     contact = models.CharField(max_length=100)
 
     def get_absolute_url(self):
-        return reverse('getteacher')
+        return reverse('getteacherlist' )
+        # kwargs={'pk':self.pk}

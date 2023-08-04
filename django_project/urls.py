@@ -32,10 +32,16 @@ urlpatterns = [
     path('vendor-details/',Vender,name='Vender'),
     path('delete/<int:id>/',deleteStudent,name='deleteStudent'),
     path('update/<int:id>/',updateStudent,name='updateStudent'),
+
+
     path('firstcbv/',FirstClassBasedView.as_view()),
-    path('getteacher/', Teacherlist.as_view(),name='getteacher'),
-    path('getteacher/<int:pk>', GetTeacher.as_view(),name='getteacherinfo'),
+    path('getteacher/', Teacherlist.as_view(),name='getteacherlist'),
+    path('getteacher/<int:pk>', GetTeacher.as_view()),
     path('addteacher/',AddTeacher.as_view()),
+    path('updateteacher/<int:pk>',UpdateTeacher.as_view()),
+    path('deleteteacher/<int:pk>',DeleteTeacher.as_view()),
+
+
 
 
 ]

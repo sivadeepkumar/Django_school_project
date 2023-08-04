@@ -2,8 +2,9 @@ from django.shortcuts import render,redirect
 from admissions.models import Student,Teacher
 from admissions.forms import StudentModelForm,VenderForm
 from django.views.generic import View
+from django.urls import reverse_lazy
 from django.http import HttpResponse
-from django.views.generic import ListView,DetailView,CreateView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 
 # Create your views here.
 
@@ -71,12 +72,21 @@ class Teacherlist(ListView):
     model = Teacher
     
 
-
-
 class GetTeacher(DetailView):
     model = Teacher
     
 
 class AddTeacher(CreateView):
     model = Teacher
-    fields = ('name','subject','contact','exp')
+    fields = ('name','exp','subject','contact')
+
+
+class UpdateTeacher(UpdateView):
+    model = Teacher 
+    fields = ('name','exp','subject','contact')
+    # success_url = reverse_lazy('getteacherlist')
+
+
+class DeleteTeacher(DeleteView):
+    model = Teacher
+    success_url = reverse_lazy('getteacherlist')    

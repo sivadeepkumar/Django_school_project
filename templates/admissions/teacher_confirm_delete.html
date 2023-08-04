@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block start %}
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" value="Confirm">Confirm</button>
+    
+</form>
+<a href="getteacher"><button type="button" value="Cancel">Cancel</button></a>
+
+{% endblock %}
